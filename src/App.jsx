@@ -23,12 +23,6 @@ function App() {
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
             </Routes>
-            {/* <button type="button" onClick={async () => console.log(await get_cars())}>
-                Get contacts
-            </button>
-            <button type="button" onClick={async () => console.log(await get_car_make())}>
-                Get makes
-            </button> */}
         </>
     );
 }
