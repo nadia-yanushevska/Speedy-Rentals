@@ -1,0 +1,20 @@
+.div {
+    line-height: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    color: var(--dark-blue-color);
+    font-size: 32px;
+    line-height: 1.1em;
+}
+
+.heading {
+    text-align: center;
+    text-shadow: -2px -8px 12px var(--white-color);
+    font-size: 56px;
+    margin: 36px 0px;
+}

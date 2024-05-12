@@ -1,0 +1,53 @@
+.div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    padding: 60px;
+
+    background-color: var(--light-blue-color);
+    border: 1px solid var(--dark-blue-color);
+    border-radius: 16px;
+}
+
+.title {
+    color: var(--dark-blue-color);
+    font-size: 56px;
+    margin-bottom: 8px;
+}
+
+.text {
+    margin-bottom: auto;
+    font-size: 28px;
+}
+
+.link {
+    margin-top: auto;
+    text-decoration: underline;
+    transition: color 0.5s ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: var(--dark-blue-color);
+    }
+}
+
+.icon {
+    color: var(--dark-blue-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .div {
+        width: 300px;
+        height: 300px;
+        padding: 24px;
+    }
+
+    .title {
+        font-size: 48px;
+    }
+}

@@ -1,0 +1,29 @@
+body {
+    background-color: var(--light-blue-color);
+    background: linear-gradient(-16deg, rgba(52, 112, 255, 1) 0%, rgba(232, 239, 255, 1) 22%, rgba(247, 247, 251, 1) 57%, rgba(232, 239, 255, 1) 69%, rgba(81, 132, 255, 1) 97%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    height: 100vh;
+    overflow: hidden;
+
+    font-size: 24px;
+}
+
+/* Scrollbar styles */
+body {
+    scrollbar-color: var(--blue-color) var(--light-blue-color);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-blue-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue-color);
+    height: 20px;
+}
