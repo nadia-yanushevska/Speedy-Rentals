@@ -2,9 +2,18 @@
     background-color: var(--blue-color);
     color: var(--white-color);
     padding: 14px 20px;
+    width: 100%;
+    max-width: 450px;
     border-radius: 12px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: background-color 0.5s ease-in-out;
+
+    &:hover,
+    &:focus {
+        background-color: var(--dark-blue-color);
+    }
 }

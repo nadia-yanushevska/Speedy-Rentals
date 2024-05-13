@@ -16,13 +16,13 @@
 
 .title {
     color: var(--dark-blue-color);
-    font-size: 56px;
+    font-size: 48px;
     margin-bottom: 8px;
 }
 
 .text {
     margin-bottom: auto;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .link {
@@ -45,9 +45,5 @@
         width: 300px;
         height: 300px;
         padding: 24px;
-    }
-
-    .title {
-        font-size: 48px;
     }
 }

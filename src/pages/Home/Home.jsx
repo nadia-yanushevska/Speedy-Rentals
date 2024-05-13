@@ -16,13 +16,13 @@ function Home() {
             </p>
 
             {/* <button type="button" onClick={async () => console.log(await get_cars())}>
-                Get contacts
+                Get adverts
             </button>
             <button type="button" onClick={async () => console.log(await get_cars(2))}>
-                Get contacts2
+                Get adverts2
             </button>
             <button type="button" onClick={async () => console.log(await get_cars(3))}>
-                Get contacts3
+                Get adverts3
             </button> */}
         </div>
     );

@@ -18,12 +18,10 @@
     }
 }
 @media only screen and (min-width: 1280px) {
-    .form {
-        gap: 56px;
-    }
-
+    .form,
     .form_wrapper {
         gap: 56px;
+        justify-content: space-evenly;
     }
 }
 
