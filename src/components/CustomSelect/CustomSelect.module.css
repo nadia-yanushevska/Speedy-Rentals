@@ -1,0 +1,54 @@
+/* .option_field {
+    background-color: var(--light-blue-color);
+    color: var(--black-color);
+    border: 1px solid var(--dark-blue-color);
+    border-radius: 8px;
+    width: 222px;
+    padding: 8px 16px;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: var(--dark-blue-color);
+    }
+}
+.options {
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        background-color: var(--black-color);
+    }
+} */
+
+.select {
+    width: fit-content;
+    min-width: 200px;
+}
+.smaller {
+    min-width: 150px;
+}
+@media only screen and (max-width: 767.98px) {
+    .select,
+    .smaller {
+        min-width: 280px;
+    }
+}
+
+.icon {
+    transform: rotate(0deg);
+    animation: transformation 0.5s ease-in-out;
+}
+.transformed {
+    transform: rotate(180deg);
+    animation-direction: reverse;
+}
+
+@keyframes transformation {
+    from {
+        transform: rotate(-180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}

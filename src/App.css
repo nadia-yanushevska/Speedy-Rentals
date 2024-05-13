@@ -27,3 +27,14 @@ body {
     background: var(--blue-color);
     height: 20px;
 }
+
+/* Select style */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+option {
+    cursor: pointer;
+}

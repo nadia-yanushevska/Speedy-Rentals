@@ -1,1 +1,10 @@
-.btn {}
+.btn {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    padding: 14px 20px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

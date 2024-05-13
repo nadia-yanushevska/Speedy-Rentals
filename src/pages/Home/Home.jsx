@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import s from './Home.module.css';
-import { get_cars } from '../../assets/mockAPI';
+// import { get_cars } from '../../assets/mockAPI';
 
 function Home() {
     return (
