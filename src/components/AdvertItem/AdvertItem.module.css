@@ -41,3 +41,7 @@
 }
 .item {
 }
+
+.img_wrapper {
+    position: relative;
+}

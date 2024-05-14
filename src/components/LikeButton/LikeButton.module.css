@@ -1,0 +1,10 @@
+.likeBtn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    opacity: 0.5;
+}
+
+.liked {
+    opacity: 1;
+}

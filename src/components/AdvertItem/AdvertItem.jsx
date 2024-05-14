@@ -3,14 +3,19 @@ import useModal from '../../hooks/useModal';
 import CustomModal from '../AdvertModal/AdvertModal';
 import CustomButton from '../CustomButton/CustomButton';
 import s from './AdvertItem.module.css';
+import LikeButton from '../LikeButton/LikeButton';
 
 function AdvertItem({ advert }) {
     const { img, make, model, year, rentalPrice, address, rentalCompany, type, id, functionalities } = advert;
     const { modalIsOpen, openModal, closeModal } = useModal();
+
     return (
         <>
             <div className={s.card}>
-                <img className={s.img} src={img} alt={make + ', ' + model} />
+                <div className={s.img_wrapper}>
+                    <LikeButton advert={advert} />
+                    <img className={s.img} src={img} alt={make + ', ' + model} />
+                </div>
                 <div className={s.text}>
                     <p className={s.left}>
                         {make} <span className={s.colored}>{model}</span>, {year}
@@ -26,7 +31,7 @@ function AdvertItem({ advert }) {
                         );
                     })}
                 </ul>
-                <CustomButton onClick={() => openModal()}>Learn More</CustomButton>
+                <CustomButton onClick={openModal}>Learn More</CustomButton>
             </div>
 
             <CustomModal advertID={id} modalIsOpen={modalIsOpen} closeModal={closeModal} />

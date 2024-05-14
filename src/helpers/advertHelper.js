@@ -1,3 +1,8 @@
+export function isFavorite(adv, favs) {
+    const idx = favs.findIndex(elem => elem.id === adv.id);
+    return idx !== -1;
+}
+
 export function getKeyWords(address, rentalCompany, type, id, functionalities) {
     const { city, country } = formatAddress(address);
     return [city, country, rentalCompany, type, id, functionalities[0]];

@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import s from './Home.module.css';
-// import { get_cars } from '../../assets/mockAPI';
 
 function Home() {
     return (
@@ -14,16 +13,6 @@ function Home() {
             <p>
                 Whether for business or leisure, the <span className={s.title}>Speedy Rentals</span> offers a convenient and efficient way to find the perfect rental car for any occasion.
             </p>
-
-            {/* <button type="button" onClick={async () => console.log(await get_cars())}>
-                Get adverts
-            </button>
-            <button type="button" onClick={async () => console.log(await get_cars(2))}>
-                Get adverts2
-            </button>
-            <button type="button" onClick={async () => console.log(await get_cars(3))}>
-                Get adverts3
-            </button> */}
         </div>
     );
 }
