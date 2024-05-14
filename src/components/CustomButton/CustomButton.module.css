@@ -9,11 +9,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: background-color 0.5s ease-in-out;
 
     &:hover,
     &:focus {
         background-color: var(--dark-blue-color);
     }
+}
+
+.btn_shadow {
+    box-shadow: 8px 8px 60px var(--blue-color), -16px -16px 40px var(--white-color);
 }

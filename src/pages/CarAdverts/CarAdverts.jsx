@@ -13,7 +13,7 @@ function CarAdverts() {
     const length = useSelector(selectLength);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchAdverts({ pageID, length }));
+        dispatch(fetchAdverts({ pageID, length }))
     }, [dispatch]);
     return (
         <div className={s.div}>

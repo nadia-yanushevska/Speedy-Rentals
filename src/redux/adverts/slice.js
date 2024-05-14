@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchAdverts } from './operations';
+import { getPriceNumber } from '../../helpers/filterHelper';
 
 const initialState = {
     adverts: [],
+    filter: [],
     pageID: 1,
     length: 12,
     error: '',
@@ -21,6 +23,17 @@ const handleRejected = (state, action) => {
 export const slice = createSlice({
     name: 'adverts',
     initialState,
+    reducers: {
+        filterAdverts(state, { payload }) {
+            state.filter = state.adverts.filter(
+                adv =>
+                    (payload.make === 'All' ? adv : adv.make === payload.make) &&
+                    getPriceNumber(adv.rentalPrice) <= payload.price &&
+                    adv.mileage >= payload.mileageFrom &&
+                    adv.mileage <= payload.mileageTo
+            );
+        },
+    },
     extraReducers: builder => {
         builder
             .addCase(fetchAdverts.fulfilled, (state, { payload }) => {
@@ -39,3 +52,4 @@ export const slice = createSlice({
 });
 
 export const advertsReducer = slice.reducer;
+export const { filterAdverts } = slice.actions;

@@ -70,8 +70,6 @@ export function styleSelect(padding = '12px 20px 12px 20px') {
                 width: '100%',
                 boxShadow: '1px 1px 16px var(--blue-color), -4px -4px 16px var(--white-color)',
                 marginTop: '2px',
-                // opacity: state.hasValue ? 1 : 0,
-                // transition: 'opacity .5s ease-in-out',
                 zIndex: 2,
             };
         },

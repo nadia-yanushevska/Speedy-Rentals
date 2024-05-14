@@ -1,8 +1,9 @@
+import clsx from 'clsx';
 import s from './CustomButton.module.css';
 
-function CustomButton({ children, type = 'button', onClick = () => {} }) {
+function CustomButton({ children, type = 'button', onClick = () => {}, addShadow = false }) {
     return (
-        <button className={s.btn} type={type} onClick={onClick}>
+        <button className={clsx(s.btn, addShadow && s.btn_shadow)} type={type} onClick={onClick}>
             {children}
         </button>
     );

@@ -6,6 +6,8 @@ import './App.css';
 // import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Layout from './components/Layout/Layout';
 import { lazy } from 'react';
+import { Toaster } from 'react-hot-toast';
+import { getToastStyles } from './helpers/toastHelper';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const CarAdverts = lazy(() => import('./pages/CarAdverts/CarAdverts'));
@@ -23,6 +25,8 @@ function App() {
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
             </Routes>
+
+            <Toaster {...getToastStyles()} />
         </>
     );
 }
