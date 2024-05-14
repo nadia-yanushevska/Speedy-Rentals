@@ -2,19 +2,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import AdvertForm from '../../components/AdvertForm/AdvertForm';
 import AdvertList from '../../components/AdvertList/AdvertList';
 import s from './CarAdverts.module.css';
-import { useEffect } from 'react';
 import { fetchAdverts } from '../../redux/adverts/operations';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { selectLength, selectPage } from '../../redux/adverts/selectors';
 import { reachedMaxPage } from '../../helpers/paginationHelper';
+import { clearFilter } from '../../redux/adverts/slice';
+import toast from 'react-hot-toast';
 
 function CarAdverts() {
     const pageID = useSelector(selectPage);
     const length = useSelector(selectLength);
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchAdverts({ pageID, length }))
-    }, [dispatch]);
+
     return (
         <div className={s.div}>
             <AdvertForm />
@@ -23,6 +22,8 @@ function CarAdverts() {
                 {!reachedMaxPage(pageID, length) && (
                     <CustomButton
                         onClick={() => {
+                            dispatch(clearFilter());
+                            toast('Filter was cleared.');
                             dispatch(fetchAdverts({ pageID, length }));
                         }}
                     >

@@ -5,9 +5,12 @@ import './App.css';
 // import Favorites from './pages/Favorites/Favorites';
 // import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Layout from './components/Layout/Layout';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { getToastStyles } from './helpers/toastHelper';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectLength } from './redux/adverts/selectors';
+import { fetchAdverts } from './redux/adverts/operations';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const CarAdverts = lazy(() => import('./pages/CarAdverts/CarAdverts'));
@@ -15,6 +18,13 @@ const Favorites = lazy(() => import('./pages/Favorites/Favorites'));
 const PageNotFound = lazy(() => import('./pages/PageNotFound/PageNotFound'));
 
 function App() {
+    const length = useSelector(selectLength);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const pageID = 1;
+        dispatch(fetchAdverts({ pageID, length }));
+    }, [dispatch]);
     return (
         <>
             <Routes>

@@ -8,18 +8,28 @@ import { filterAdverts } from '../../redux/adverts/slice';
 import { prepareValues } from '../../helpers/filterHelper';
 import { selectFilter } from '../../redux/adverts/selectors';
 import toast from 'react-hot-toast';
+import { useLayoutEffect, useRef } from 'react';
 
 function AdvertForm() {
     const dispatch = useDispatch();
     const filter = useSelector(selectFilter);
+    const isInitialMount = useRef(true);
+
+    useLayoutEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+        } else {
+            if (filter.length === 0) {
+                toast('No adverts found.');
+            }
+        }
+    }, [filter]);
 
     function onSubmit(e) {
         e.preventDefault();
         dispatch(filterAdverts(prepareValues(e.target.elements)));
-        if (filter.length === 0) {
-            toast('No adverts were found.');
-        }
     }
+
     return (
         <>
             <form className={s.form} onSubmit={onSubmit}>

@@ -6,3 +6,11 @@
     align-items: stretch;
     gap: 50px 29px;
 }
+
+.notification {
+    display: block;
+    width: fit-content;
+    margin: auto;
+
+    font-size: 24px;
+}

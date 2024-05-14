@@ -4,7 +4,7 @@ import { getPriceNumber } from '../../helpers/filterHelper';
 
 const initialState = {
     adverts: [],
-    filter: [],
+    filter: '',
     pageID: 1,
     length: 12,
     error: '',
@@ -33,6 +33,9 @@ export const slice = createSlice({
                     adv.mileage <= payload.mileageTo
             );
         },
+        clearFilter(state) {
+            state.filter = [];
+        },
     },
     extraReducers: builder => {
         builder
@@ -52,4 +55,4 @@ export const slice = createSlice({
 });
 
 export const advertsReducer = slice.reducer;
-export const { filterAdverts } = slice.actions;
+export const { filterAdverts, clearFilter } = slice.actions;
