@@ -17,11 +17,21 @@
 
 .img_wrapper {
     position: relative;
+    width: 100%;
+    align-self: center;
 }
 
 .img {
+    width: 100%;
+    min-height: 200px;
     object-fit: cover;
     border-radius: 14px;
+    border: 1px solid var(--blue-color);
+    background-color: var(--light-blue-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content_wrapper {
