@@ -25,8 +25,7 @@ export const slice = createSlice({
         builder
             .addCase(fetchAdverts.fulfilled, (state, { payload }) => {
                 if (state.pageID === +payload.id) {
-                    state.adverts = [...state.adverts, ...payload.results];
-                    state.adverts = payload.results;
+                    state.adverts = state.adverts.concat(payload.results);
                     state.pageID = +payload.id + 1;
                 }
 

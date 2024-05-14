@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { fetchAdverts } from '../../redux/adverts/operations';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { selectLength, selectPage } from '../../redux/adverts/selectors';
+import { reachedMaxPage } from '../../helpers/paginationHelper';
 
 function CarAdverts() {
     const pageID = useSelector(selectPage);
@@ -19,13 +20,15 @@ function CarAdverts() {
             <AdvertForm />
             <div className={s.list_wrapper}>
                 <AdvertList />
-                <CustomButton
-                    onClick={() => {
-                        dispatch(fetchAdverts({ pageID, length }));
-                    }}
-                >
-                    Load next
-                </CustomButton>
+                {!reachedMaxPage(pageID, length) && (
+                    <CustomButton
+                        onClick={() => {
+                            dispatch(fetchAdverts({ pageID, length }));
+                        }}
+                    >
+                        Load next
+                    </CustomButton>
+                )}
             </div>
         </div>
     );
