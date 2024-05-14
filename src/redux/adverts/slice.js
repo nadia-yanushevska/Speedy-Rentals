@@ -34,7 +34,7 @@ export const slice = createSlice({
             );
         },
         clearFilter(state) {
-            state.filter = [];
+            state.filter = state.adverts;
         },
     },
     extraReducers: builder => {

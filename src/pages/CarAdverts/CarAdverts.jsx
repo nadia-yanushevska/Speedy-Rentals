@@ -21,10 +21,10 @@ function CarAdverts() {
                 <AdvertList />
                 {!reachedMaxPage(pageID, length) && (
                     <CustomButton
-                        onClick={() => {
+                        onClick={async () => {
+                            await dispatch(fetchAdverts({ pageID, length }));
                             dispatch(clearFilter());
                             toast('Filter was cleared.');
-                            dispatch(fetchAdverts({ pageID, length }));
                         }}
                     >
                         Load next
